@@ -47,5 +47,39 @@ each 15 minutes:
 */15 * * * * php /where/your/agent/index.php update
 */15 * * * * php /where/your/agent/index.php discover
 ```
+
+## Docker
+
+Image available : https://hub.docker.com/r/anthodingo/phpipam-agent
+
+Settings : 
+| Name                     | Default Value         | Available value                |
+| ------------------------ | --------------------- | ------------------------------ |
+| IPAM_DATABASE_HOST       | localhost             |                                |
+| IPAM_DATABASE_USER       | phpipam               |                                |
+| IPAM_DATABASE_PASS       | phpipamadmin          |                                |
+| IPAM_DATABASE_NAME       | phpipam               |                                |
+| IPAM_DATABASE_PORT       | 3306                  |                                |
+| AGENT_KEY                |                       |                                |
+| API_KEY                  |                       |                                |
+| IPAM_METHOD              | fping                 | ping/fping/pear                |
+| IPAM_PINGPATH            | /usr/local/sbin/fping |                                |
+| IPAM_RESET_AUTODISCOVER  | false                 | true/false                     |
+| IPAM_REMOVE_INACTIVE     | false                 | true/false                     |
+| SCAN_INTERVAL            | 10m                   | 5m/10m/15m/30m/1h/2h/4h/6h/12h |
+
+Docker compose file exemple :
+```
+version: "3.7"
+services:
+  phpipam-agent:
+    image: anthodingo/phpipam-agent:latest
+    container_name: phpipam-agent
+    environment:
+      - AGENT_KEY=mYa6eN7K3y
+      - API_KEY=Ap1K3y
+    network_mode: bridge
+```
+
 ## Contact
 `miha.petkovsek@gmail.com`
