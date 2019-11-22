@@ -3,7 +3,6 @@ LABEL maintainer="me@janus.ovh"
 
 ENV SCAN_INTERVAL=1h AGENT_KEY='' API_KEY=''
 
-ADD . /phpipam/
 ADD root/entrypoint.sh /entrypoint.sh
 RUN apt update && \
     apt install -y --no-install-recommends fping git cron && \
