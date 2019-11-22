@@ -2,9 +2,9 @@
 
 if [ -f /usr/share/zoneinfo/$TZ ]; then
   setup-timezone -z $TZ
-  echo -e "[Date]\ndate.timezone = $TZ" >/usr/local/etc/php/conf.d/99_tz.ini
+  echo "[Date]\ndate.timezone = $TZ" >/usr/local/etc/php/conf.d/99_tz.ini
 else
-  echo -e "[Date]\ndate.timezone = UTC" >/usr/local/etc/php/conf.d/99_tz.ini
+  echo "[Date]\ndate.timezone = UTC" >/usr/local/etc/php/conf.d/99_tz.ini
 fi
 
 case "$SCAN_INTERVAL" in

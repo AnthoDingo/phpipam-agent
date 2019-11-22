@@ -53,6 +53,7 @@ each 15 minutes:
 Image available : https://hub.docker.com/r/anthodingo/phpipam-agent
 
 Settings : 
+
 Name                     | Default Value         | Available value 
 ------------------------ | --------------------- | ------------------------------
 IPAM_DATABASE_HOST       | localhost             | 
